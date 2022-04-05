@@ -5,11 +5,12 @@ const enableWebcamButton = document.getElementById('webcamButton');
 
 let personPresent = false;
 
-setInterval(()=> {fetch("http://localhost:3000/", {
+setInterval(()=> {fetch("https://viccs.herokuapp.com/", {
   method: "POST",
   headers: {'Content-Type': 'application/json'}, 
   body: JSON.stringify({val: personPresent})
 }).then(res => {
+  console.log("val:", personPresent);
   console.log("Request complete! response:", res);
 });},1000);
 

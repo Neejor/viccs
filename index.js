@@ -19,8 +19,8 @@ app.get('/', function(req, res) {
 app.post("/",(req,res)=>{
 	personPresent = req.body.val;
 	console.log("personPresent: ", personPresent);
-	res.send("Coo")
-})
+	res.send("personPresent: ", personPresent);
+});
 
 
 const PORT = process.env.PORT || 3000;
