@@ -5,12 +5,12 @@ const enableWebcamButton = document.getElementById('webcamButton');
 
 let personPresent = false;
 
-setInterval(()=> {fetch("https://viccs.herokuapp.com/", {
+setInterval(()=> {fetch("http://viccs.herokuapp.com/", {
   method: "POST",
   headers: {'Content-Type': 'application/json'}, 
   body: JSON.stringify({val: personPresent})
 }).then(res => {
-  console.log("Request complete! response:", res);
+  console.log("Request complete! response:", res.body);
 });},1000);
 
 
@@ -107,6 +107,7 @@ function predictWebcam() {
       }
     }
     
+    console.log("localPersonPresent: ", localPersonPresent);
     personPresent = localPersonPresent;
     // Call this function again to keep predicting when the browser is ready.
     window.requestAnimationFrame(predictWebcam);

@@ -8,7 +8,7 @@ var path = require("path");
 var personPresent = false;
 
 app.get("/getVal", (req,res) => {
-	console.log("getVal request");
+	console.log("getVal request: ", personPresent);
 	res.send({val: personPresent});
 })
 
