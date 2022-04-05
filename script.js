@@ -10,7 +10,6 @@ setInterval(()=> {fetch("https://viccs.herokuapp.com/", {
   headers: {'Content-Type': 'application/json'}, 
   body: JSON.stringify({val: personPresent})
 }).then(res => {
-  console.log("val:", personPresent);
   console.log("Request complete! response:", res);
 });},1000);
 
